@@ -1,0 +1,50 @@
+﻿@model ChrisTrent_ITrellis.Models.Todo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Todo Details</h2>
+
+<div>
+    <h4>Todo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.toDo_Item)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.toDo_Item)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deadLineDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deadLineDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isComplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.moreDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.moreDetails)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit Todo", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to Todo", "Index")
+</p>

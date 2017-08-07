@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ChrisTrent_ITrellis.Models.Todo>
+
+<h2>Todo Home</h2>
+<br />
+<div class="jumbotron">
+    <div class="btn-container-index">
+        <div class="row">
+            @Html.ActionLink(" New Todo", "Create", "Todo", null, new { @class = "glyphicon glyphicon-plus btn btn-success" })
+        </div>
+    </div>
+    <br />
+
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>
+                To Do Item:
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.deadLineDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isComplete)
+            </th>
+            <th>
+                Options
+            </th>
+        </tr>
+
+        @foreach (var todo in Model)
+        {
+            if (todo.deadLineDate < DateTime.Now && !todo.isComplete)
+            {
+            <tr bgcolor="#eaea65">
+                <td>
+                    @Html.DisplayFor(modelItem => todo.toDo_Item)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => todo.deadLineDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => todo.isComplete)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = todo.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = todo.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = todo.ID })
+                </td>
+            </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => todo.toDo_Item)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => todo.deadLineDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => todo.isComplete)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = todo.ID }) |
+                        @Html.ActionLink("Details", "Details", new { id = todo.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = todo.ID })
+                    </td>
+                </tr>
+
+            }
+        }
+    </table>
+</div>
