@@ -1,0 +1,30 @@
+Overview:
+
+C# MVC Project using LINQ/Entity for database abstraction, creation and rapid development.
+Local databse using Entity (note contains auto generated code for an MVC website using IDENTITY other default MVC frameworks, sorry about the code bloat)
+
+Frontend UI: Boostrap and RazerCSHTML, (Autoincluded JS for input scrubbing)
+
+Unit Tests: Native C# Unit tests, database mock using lists.
+
+
+Using the project:
+
+Hopefully the local database will transfer over when the project is pulled from git. Nuget packages may need to be restored. Can be done from NuGent Package manager if system does not do it automatically.
+
+Project can be run just by clicking on internet explorer option for local build. 
+Unit tests can be run by clicking on tests->run all. 
+
+If the local database does not transfer over follow these steps:
+Open NuGent Package manager terminal window.
+The Following commands must be typed into the terminal exactly as written:
+
+
+1. enable-migrations -Force
+2. add-migration Migration1
+3. update-database
+
+This will create a local database on your machine, but will require you to put in test data (which the local DB that hopefully will transfer includes).
+
+Then proceed to run project (List will have nothing in it. I should of auto generated some enteries my apologies)
+
